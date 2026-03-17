@@ -16,7 +16,7 @@
     <div class="bio-section">
       <div class="bio-left" ref="bioLeft">
         <div class="bio-label">THE PHOTOGRAPHER</div>
-        <h2 class="bio-name">Alex Chen</h2>
+        <h2 class="bio-name">M先生</h2>
         <div class="bio-tags">
           <span>Landscape</span>
           <span>Portrait</span>
@@ -68,14 +68,14 @@
     <!-- Contact -->
     <div class="contact-section">
       <h2>Let's create<br /><em>something beautiful.</em></h2>
-      <a href="mailto:hello@lumina.photo" class="contact-btn">GET IN TOUCH →</a>
+      <a href="tel:17759729585" class="contact-btn">GET IN TOUCH →</a>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-inner">
-        <div class="footer-logo">LUMINA</div>
-        <p class="footer-copy">© 2024 LUMINA Photography. All rights reserved.</p>
+        <div class="footer-logo">M&H</div>
+        <p class="footer-copy">© 2024 M&H Photography. All rights reserved.</p>
         <div class="footer-links">
           <a href="#">Instagram</a>
           <a href="#">Behance</a>
@@ -98,7 +98,7 @@ const timeline = [
   { year: '2018', title: '首次获奖', desc: '作品《极夜》获得国际自然摄影大赛金奖。' },
   { year: '2020', title: '出版画册', desc: '《光与影之间》摄影集全球发行，销量突破10万册。' },
   { year: '2022', title: '个展开幕', desc: '在巴黎、纽约、东京举办个人摄影展，观展人数超过50万。' },
-  { year: '2024', title: '数字展览', desc: '推出线上沉浸式摄影展览平台 LUMINA，向全球开放。' },
+  { year: '2024', title: '数字展览', desc: '推出线上沉浸式摄影展览平台 M&H，向全球开放。' },
 ]
 
 const awards = [

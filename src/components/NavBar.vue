@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar" :class="{ scrolled: isScrolled, hidden: isHidden }">
     <div class="nav-inner">
-      <router-link to="/" class="logo">LUMINA</router-link>
+      <router-link to="/" class="logo">M&H</router-link>
       <div class="nav-links">
         <router-link to="/" class="nav-link">HOME</router-link>
         <router-link to="/gallery" class="nav-link">GALLERY</router-link>

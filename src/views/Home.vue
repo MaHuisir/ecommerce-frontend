@@ -108,8 +108,8 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-inner">
-        <div class="footer-logo">LUMINA</div>
-        <p class="footer-copy">© 2024 LUMINA Photography. All rights reserved.</p>
+        <div class="footer-logo">M&H</div>
+        <p class="footer-copy">© 2024 M&H Photography. All rights reserved.</p>
         <div class="footer-links">
           <a href="#">Instagram</a>
           <a href="#">Behance</a>
