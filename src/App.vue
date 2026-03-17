@@ -1,17 +1,31 @@
 <template>
-  <el-config-provider :locale="zhCn">
-    <router-view />
-  </el-config-provider>
+  <div id="smooth-wrapper">
+    <NavBar />
+    <router-view v-slot="{ Component }">
+      <transition name="page" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+    <CursorFollower />
+  </div>
 </template>
 
 <script setup>
-import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
-</script>
+import { onMounted } from 'vue'
+import NavBar from './components/NavBar.vue'
+import CursorFollower from './components/CursorFollower.vue'
+import Lenis from 'lenis'
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-</style>
+onMounted(() => {
+  const lenis = new Lenis({
+    duration: 1.4,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+  })
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+  requestAnimationFrame(raf)
+})
+</script>
