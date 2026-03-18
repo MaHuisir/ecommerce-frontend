@@ -171,13 +171,14 @@ onMounted(() => {
     display: block;
   }
 
-  // 移动端：裁切填满
+  // 移动端：横屏图完整显示，竖屏图填满
   @media (max-width: 768px) {
-    &.size-0 .item-img { aspect-ratio: 3/4; object-fit: cover; }
-    &.size-1 .item-img { aspect-ratio: 16/9; object-fit: cover; }
-    &.size-2 .item-img { aspect-ratio: 1/1; object-fit: cover; }
-    &.size-3 .item-img { aspect-ratio: 4/3; object-fit: cover; }
-    &.size-4 .item-img { aspect-ratio: 2/3; object-fit: cover; }
+    .item-img {
+      width: 100%;
+      object-fit: contain;
+      // 限制最大高度，避免横屏图太高
+      max-height: 60vh;
+    }
   }
 }
 
