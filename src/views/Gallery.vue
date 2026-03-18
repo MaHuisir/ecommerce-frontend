@@ -163,11 +163,22 @@ onMounted(() => {
   overflow: hidden;
   opacity: 0;
 
-  &.size-0 .item-img { aspect-ratio: 3/4; }
-  &.size-1 .item-img { aspect-ratio: 16/9; }
-  &.size-2 .item-img { aspect-ratio: 1/1; }
-  &.size-3 .item-img { aspect-ratio: 4/3; }
-  &.size-4 .item-img { aspect-ratio: 2/3; }
+  // PC端：显示完整图片，不裁切
+  .item-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  // 移动端：裁切填满
+  @media (max-width: 768px) {
+    &.size-0 .item-img { aspect-ratio: 3/4; object-fit: cover; }
+    &.size-1 .item-img { aspect-ratio: 16/9; object-fit: cover; }
+    &.size-2 .item-img { aspect-ratio: 1/1; object-fit: cover; }
+    &.size-3 .item-img { aspect-ratio: 4/3; object-fit: cover; }
+    &.size-4 .item-img { aspect-ratio: 2/3; object-fit: cover; }
+  }
 }
 
 .item-link {
