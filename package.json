@@ -14,8 +14,7 @@
     "vue": "^3.4.0",
     "vue-router": "^4.3.0",
     "gsap": "^3.12.5",
-    "lenis": "^1.1.9",
-    "swiper": "^11.1.4"
+    "lenis": "^1.1.9"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",
