@@ -3,17 +3,30 @@
     <!-- Hero Section -->
     <section class="hero" ref="heroRef">
       <div class="hero-bg">
-        <img :src="works[currentSlide].image" :key="currentSlide" class="hero-img" alt="" />
+        <!-- PC 横屏图 -->
+        <img
+          :src="featuredWorks[currentSlide].image"
+          :key="'pc-' + currentSlide"
+          class="hero-img hero-img-pc"
+          alt=""
+        />
+        <!-- 移动端竖屏图 -->
+        <img
+          :src="featuredWorks[currentSlide].imageMobile || featuredWorks[currentSlide].image"
+          :key="'mobile-' + currentSlide"
+          class="hero-img hero-img-mobile"
+          alt=""
+        />
         <div class="hero-overlay"></div>
       </div>
 
       <div class="hero-content">
-        <div class="hero-label">{{ works[currentSlide].category }} · {{ works[currentSlide].location }}</div>
+        <div class="hero-label">{{ featuredWorks[currentSlide].category }} · {{ featuredWorks[currentSlide].location }}</div>
         <h1 class="hero-title">
-          <span class="line" v-for="(char, i) in works[currentSlide].title" :key="i + currentSlide">{{ char }}</span>
+          <span class="line" v-for="(char, i) in featuredWorks[currentSlide].title" :key="i + currentSlide">{{ char }}</span>
         </h1>
-        <p class="hero-subtitle">{{ works[currentSlide].subtitle }}</p>
-        <router-link :to="`/work/${works[currentSlide].id}`" class="hero-btn">
+        <p class="hero-subtitle">{{ featuredWorks[currentSlide].subtitle }}</p>
+        <router-link :to="`/work/${featuredWorks[currentSlide].id}`" class="hero-btn">
           <span>VIEW WORK</span>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M5 12H19M13 6L19 12L13 18" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
@@ -198,6 +211,20 @@ onUnmounted(() => clearInterval(timer))
     width: 100%; height: 100%;
     object-fit: cover;
     animation: zoomIn 8s ease forwards;
+  }
+  // PC 显示横屏，隐藏竖屏
+  .hero-img-mobile {
+    display: none;
+  }
+  // 移动端显示竖屏，隐藏横屏
+  @media (max-width: 768px) {
+    .hero-img-pc {
+      display: none;
+    }
+    .hero-img-mobile {
+      display: block;
+      object-position: center center;
+    }
   }
   .hero-overlay {
     position: absolute;
