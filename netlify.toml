@@ -5,3 +5,9 @@
 [build.environment]
   NODE_VERSION = "18"
   NPM_CONFIG_REGISTRY = "https://registry.npmjs.org/"
+
+# 单页应用路由重定向
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
