@@ -171,13 +171,12 @@ onMounted(() => {
     display: block;
   }
 
-  // 移动端：横屏图完整显示，竖屏图填满
+  // 移动端：横屏图完整显示，竖屏图宽度100%自适配高度
   @media (max-width: 768px) {
     .item-img {
       width: 100%;
-      object-fit: contain;
-      // 限制最大高度，避免横屏图太高
-      max-height: 60vh;
+      height: auto;
+      object-fit: fill;
     }
   }
 }
